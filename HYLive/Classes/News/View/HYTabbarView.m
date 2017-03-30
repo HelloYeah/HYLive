@@ -216,7 +216,7 @@ static CGFloat const topBarHeight = 40; //顶部标签条的高度
     [btn sizeToFit];
     _tabbarWidth += btn.frame.size.width + topBarItemMargin;
     btn.titleLabel.font = kFont(16);
-    [btn setTitleColor:kDarkGrayColor forState:UIControlStateNormal];
-    [btn setTitleColor:kCommonRedColor forState:UIControlStateSelected];
+    [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
 }
 @end

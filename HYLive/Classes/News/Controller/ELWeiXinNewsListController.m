@@ -7,9 +7,9 @@
 //
 
 #import "ELWeiXinNewsListController.h"
-#import "ELBaseRequest.h"
+//#import "ELBaseRequest.h"
 #import "ELWeiXinNewsModel.h"
-#import "UIImageView+YYWebImage.h"
+#import "UIImageView+WebCache.h"
 #import "ELWeiXinNewsListCell.h"
 #import "ELWeiXinNewsDetailController.h"
 
@@ -18,7 +18,7 @@ static const NSString * kWeiXinNewsAppKey = @"8d99c5ce4d8d02ee59ecf1a5e13f77e0";
 @interface ELWeiXinNewsListController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray * dataArray;
 @property (nonatomic,assign) NSInteger  pageIndex;
-@property (nonatomic,strong) ELBaseRequest * request;
+//@property (nonatomic,strong) ELBaseRequest * request;
 @property (nonatomic,strong) UITableView * tableView;
 @end
 
@@ -29,54 +29,54 @@ static const NSString * kWeiXinNewsAppKey = @"8d99c5ce4d8d02ee59ecf1a5e13f77e0";
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
-    [self showLoadingAnimation];
+//    [self showLoadingAnimation];
     self.pageIndex = 1;
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self loadData];
     
     
-    [ELUtils addLoadMoreForScrollView:self.tableView loadMoreCallBack:^{
-        [self loadData];
-    }];
-    
-    [ELUtils addPullRefreshForScrollView:self.tableView pullRefreshCallBack:^{
-        [self pullRefresh];
-    }];
+//    [ELUtils addLoadMoreForScrollView:self.tableView loadMoreCallBack:^{
+//        [self loadData];
+//    }];
+//    
+//    [ELUtils addPullRefreshForScrollView:self.tableView pullRefreshCallBack:^{
+//        [self pullRefresh];
+//    }];
 }
 
 
-- (ELBaseRequest *)request{
-    
-    if (_request == nil) {
-        ELBaseRequest * request = [ELBaseRequest el_request];
-        _request = request;
-    }
-    _request.el_url = [NSString stringWithFormat:@"%@?pno=%ld&key=%@",kELWeiXinNewsListAPI,self.pageIndex,kWeiXinNewsAppKey];
-    return _request;
-}
+//- (ELBaseRequest *)request{
+//    
+//    if (_request == nil) {
+//        ELBaseRequest * request = [ELBaseRequest el_request];
+//        _request = request;
+//    }
+//    _request.el_url = [NSString stringWithFormat:@"%@?pno=%ld&key=%@",kELWeiXinNewsListAPI,self.pageIndex,kWeiXinNewsAppKey];
+//    return _request;
+//}
 
 - (void)loadData{
     
-    if (!self.request) return ;
-    [self.request el_sendRequestWithCompletion:^(NSDictionary * response, BOOL success, NSString *message) {
-        
-        if (success) {
-            
-            [self hideLoadingAnimation];
-            [ELUtils endLoadMoreForScrollView:self.tableView];
-            NSMutableArray * tempArray = response[@"list"];
-            [self.dataArray addObjectsFromArray:[ELWeiXinNewsModel modelArrayWithDictArray:tempArray]];
-            [self.tableView reloadData];
-            self.pageIndex ++;
-        }
-    }];
+//    if (!self.request) return ;
+//    [self.request el_sendRequestWithCompletion:^(NSDictionary * response, BOOL success, NSString *message) {
+//        
+//        if (success) {
+//            
+//            [self hideLoadingAnimation];
+//            [ELUtils endLoadMoreForScrollView:self.tableView];
+//            NSMutableArray * tempArray = response[@"list"];
+//            [self.dataArray addObjectsFromArray:[ELWeiXinNewsModel modelArrayWithDictArray:tempArray]];
+//            [self.tableView reloadData];
+//            self.pageIndex ++;
+//        }
+//    }];
 }
 
 - (void)pullRefresh{
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [ELUtils endRefreshForScrollView:self.tableView];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [ELUtils endRefreshForScrollView:self.tableView];
+//    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

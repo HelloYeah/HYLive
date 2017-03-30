@@ -8,13 +8,13 @@
 
 #import "ELTodayHotNewsChildCell.h"
 #import "UIView+Layer.h"
-#import "UIImageView+YYWebImage.h"
+#import "UIImageView+WebCache.h"
 #import "ELTodayHotNewsChildModel.h"
 
 #define kContentBgLeftAndRightSpace kLeftMargin * kScreenWidthRatio
 #define kContentBgTopAndBottomSpace kLeftMargin * kScreenWidthRatio * 0.5
 #define kInsetMargin 10 * kScreenWidthRatio
-
+#define kLeftMargin 5
 @interface ELTodayHotNewsChildCell ()
 @property (nonatomic,strong) UIView * bgView;
 @property (nonatomic,strong) UIImageView * image_view;
@@ -37,8 +37,8 @@
     
     self.bgView = [[UIView alloc]init];
     [self.contentView addSubview:self.bgView];
-    self.bgView.backgroundColor = kBgColor;
-    [self.bgView setLayerCornerRadius:6 * kScreenWidthRatio borderWidth:kLineHeight borderColor:kBgColor];
+    self.bgView.backgroundColor = Color(210,210,210);
+    [self.bgView setLayerCornerRadius:6 * kScreenWidthRatio borderWidth:kLineHeight borderColor:Color(210,210,210)];
     
     self.image_view = [[UIImageView alloc]init];
     [self.bgView addSubview:self.image_view];
@@ -53,12 +53,12 @@
     self.timeLabel = [[UILabel alloc]init];
     [self.bgView addSubview:self.timeLabel];
     self.timeLabel.font = kFont(12);
-    self.timeLabel.textColor = kDarkGrayColor;
+    self.timeLabel.textColor = [UIColor darkGrayColor];
     
     self.souceLabel = [[UILabel alloc]init];
     [self.bgView addSubview:self.souceLabel];
     self.souceLabel.font = kFont(12);
-    self.souceLabel.textColor = kDarkGrayColor;
+    self.souceLabel.textColor = [UIColor darkGrayColor];
 }
 
 - (void)setNewsModel:(ELTodayHotNewsChildModel *)newsModel{
@@ -66,7 +66,8 @@
     _newsModel = newsModel;
     
     NSString * imageUrl = [newsModel.thumbnail_pic_s stringByReplacingOccurrencesOfString:@"\\" withString:@""];
-    [self.image_view  yy_setImageWithURL:[NSURL URLWithString:imageUrl] placeholder:[UIImage imageNamed:@"refreshjoke_loading_0"]];
+    
+    [self.image_view  sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"refreshjoke_loading_0"]];
     
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.date;

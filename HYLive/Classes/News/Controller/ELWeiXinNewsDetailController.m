@@ -18,7 +18,7 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    [self showLoadingAnimation];
+//    [self showLoadingAnimation];
     self.webView = [[WKWebView alloc]initWithFrame:CGRectMake(0,
                                                               0,
                                                               kScreenWidth,
@@ -39,10 +39,10 @@
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
-    [self hideLoadingAnimation];
+//    [self hideLoadingAnimation];
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-    [MBProgressHUD showMessage:error.domain];
+//    [MBProgressHUD showMessage:error.domain];
 }
 @end

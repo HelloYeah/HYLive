@@ -8,13 +8,13 @@
 
 #import "ELWeiXinNewsListCell.h"
 #import "UIView+Layer.h"
-#import "UIImageView+YYWebImage.h"
 #import "ELWeiXinNewsModel.h"
+#import "UIImageView+WebCache.h"
 
 #define kContentBgLeftAndRightSpace kLeftMargin * kScreenWidthRatio
 #define kContentBgTopAndBottomSpace kLeftMargin * kScreenWidthRatio * 0.5
 #define kInsetMargin 10 * kScreenWidthRatio
-
+#define kLeftMargin 5
 @interface ELWeiXinNewsListCell ()
 @property (nonatomic,strong) UIView *bgView;
 @property (nonatomic,strong) UIImageView *image_view;
@@ -35,8 +35,8 @@
     
     self.bgView = [[UIView alloc]init];
     [self.contentView addSubview:self.bgView];
-    self.bgView.backgroundColor = kBgColor;
-    [self.bgView setLayerCornerRadius:6 * kScreenWidthRatio borderWidth:kLineHeight borderColor:kBgColor];
+    self.bgView.backgroundColor = Color(210,210,210);
+    [self.bgView setLayerCornerRadius:6 * kScreenWidthRatio borderWidth:kLineHeight borderColor:Color(210,210,210)];
     
     self.image_view = [[UIImageView alloc]init];
     [self.bgView addSubview:self.image_view];
@@ -54,7 +54,7 @@
     _newsModel = newsModel;
     
     NSString * imageUrl = [newsModel.firstImg stringByReplacingOccurrencesOfString:@"\\" withString:@""];
-    [self.image_view  yy_setImageWithURL:[NSURL URLWithString:imageUrl] placeholder:[UIImage imageNamed:@"refreshjoke_loading_0"]];
+    [self.image_view sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"refreshjoke_loading_0"]];
 
     self.titleLabel.text = newsModel.title;
 }

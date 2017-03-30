@@ -6,8 +6,8 @@
 //  Copyright © 2016年 EL. All rights reserved.
 //
 
-#import "ELBaseViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface ELWeiXinNewsDetailController : ELBaseViewController
+@interface ELWeiXinNewsDetailController : UIViewController
 @property (nonatomic,copy) NSString * linkUrl;
 @end

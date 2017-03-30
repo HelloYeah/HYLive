@@ -1,5 +1,5 @@
 //
-//  ELTodayHotNewsChildController.m
+//  HYTodayHotNewsChildController.m
 //  EasyLife
 //
 //  Created by Sekorm on 16/10/9.
@@ -7,8 +7,8 @@
 //
 
 #import "HYTodayHotNewsChildController.h"
-#import "ELBaseRequest.h"
-#import "UIImageView+YYWebImage.h"
+//#import "ELBaseRequest.h"
+#import "UIImageView+WebCache.h"
 #import "ELTodayHotNewsChildCell.h"
 #import "ELTodayHotNewsChildModel.h"
 #import "ELWeiXinNewsDetailController.h"
@@ -17,7 +17,7 @@ static const NSString * kWeiXinNewsAppKey = @"160f6a145f32d7c5410a2437923e01ea";
 
 @interface HYTodayHotNewsChildController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray * dataArray;
-@property (nonatomic,strong) ELBaseRequest * request;
+//@property (nonatomic,strong) ELBaseRequest * request;
 @property (nonatomic,strong) UITableView * tableView;
 @end
 
@@ -28,40 +28,40 @@ static const NSString * kWeiXinNewsAppKey = @"160f6a145f32d7c5410a2437923e01ea";
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
-    [self showLoadingAnimation];
+//    [self showLoadingAnimation];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [self loadData];
 
-    [ELUtils addPullRefreshForScrollView:self.tableView pullRefreshCallBack:^{
-        [self pullRefresh];
-    }];
+//    [ELUtils addPullRefreshForScrollView:self.tableView pullRefreshCallBack:^{
+//        [self pullRefresh];
+//    }];
 }
 
 
-- (ELBaseRequest *)request{
-    
-    if (_request == nil) {
-        ELBaseRequest * request = [ELBaseRequest el_request];
-        _request = request;
-    }
-    _request.el_url = [NSString stringWithFormat:@"%@?type=%@&key=%@",kELTodayHotNewsListAPI,self.newsType,kWeiXinNewsAppKey];
-    return _request;
-}
+//- (ELBaseRequest *)request{
+//    
+//    if (_request == nil) {
+//        ELBaseRequest * request = [ELBaseRequest el_request];
+//        _request = request;
+//    }
+//    _request.el_url = [NSString stringWithFormat:@"%@?type=%@&key=%@",kELTodayHotNewsListAPI,self.newsType,kWeiXinNewsAppKey];
+//    return _request;
+//}
 
 - (void)loadData{
     
-    if (!self.request) return ;
-    [self.request el_sendRequestWithCompletion:^(NSDictionary * response, BOOL success, NSString *message) {
-        
-        if (success) {
-            
-            [self hideLoadingAnimation];
-            [ELUtils endRefreshForScrollView:self.tableView];
-            NSMutableArray * tempArray = response[@"data"];
-            self.dataArray  = [ELTodayHotNewsChildModel modelArrayWithDictArray:tempArray];
-            [self.tableView reloadData];
-        }
-    }];
+//    if (!self.request) return ;
+//    [self.request el_sendRequestWithCompletion:^(NSDictionary * response, BOOL success, NSString *message) {
+//        
+//        if (success) {
+//            
+//            [self hideLoadingAnimation];
+//            [ELUtils endRefreshForScrollView:self.tableView];
+//            NSMutableArray * tempArray = response[@"data"];
+//            self.dataArray  = [ELTodayHotNewsChildModel modelArrayWithDictArray:tempArray];
+//            [self.tableView reloadData];
+//        }
+//    }];
 }
 
 - (void)pullRefresh{
