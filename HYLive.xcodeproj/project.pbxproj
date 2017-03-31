@@ -33,6 +33,7 @@
 		B4261F651E8CA42A0068BFB9 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B4261F581E8CA42A0068BFB9 /* NSObject+MJKeyValue.m */; };
 		B4261F661E8CA42A0068BFB9 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B4261F5A1E8CA42A0068BFB9 /* NSObject+MJProperty.m */; };
 		B4261F671E8CA42A0068BFB9 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4261F5C1E8CA42A0068BFB9 /* NSString+MJExtension.m */; };
+		B45456EB1E8E5E5500E65077 /* HYMallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B45456EA1E8E5E5500E65077 /* HYMallCollectionViewCell.m */; };
 		B4A10EDA1E836B4E008EAFAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A10ED91E836B4E008EAFAC /* main.m */; };
 		B4A10EDD1E836B4E008EAFAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A10EDC1E836B4E008EAFAC /* AppDelegate.m */; };
 		B4A10EE51E836B4E008EAFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A10EE41E836B4E008EAFAC /* Assets.xcassets */; };
@@ -166,6 +167,8 @@
 		B4261F5A1E8CA42A0068BFB9 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		B4261F5B1E8CA42A0068BFB9 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		B4261F5C1E8CA42A0068BFB9 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		B45456E91E8E5E5500E65077 /* HYMallCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMallCollectionViewCell.h; sourceTree = "<group>"; };
+		B45456EA1E8E5E5500E65077 /* HYMallCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMallCollectionViewCell.m; sourceTree = "<group>"; };
 		B4A10ED51E836B4E008EAFAC /* HYLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A10ED91E836B4E008EAFAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4A10EDB1E836B4E008EAFAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 		B4A10F251E836CB1008EAFAC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B45456E91E8E5E5500E65077 /* HYMallCollectionViewCell.h */,
+				B45456EA1E8E5E5500E65077 /* HYMallCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1030,6 +1035,7 @@
 				B4261F3F1E8CA2790068BFB9 /* SDWebImagePrefetcher.m in Sources */,
 				B4A10F481E836E77008EAFAC /* HYDiscoverViewController.m in Sources */,
 				B4261F651E8CA42A0068BFB9 /* NSObject+MJKeyValue.m in Sources */,
+				B45456EB1E8E5E5500E65077 /* HYMallCollectionViewCell.m in Sources */,
 				B4A10FF41E839CD1008EAFAC /* UIScrollView+MJExtension.m in Sources */,
 				B4261F431E8CA2790068BFB9 /* UIImageView+HighlightedWebCache.m in Sources */,
 				B4A110081E83B882008EAFAC /* HYSettingViewController.m in Sources */,

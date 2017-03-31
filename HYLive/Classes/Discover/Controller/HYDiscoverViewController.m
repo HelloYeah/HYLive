@@ -7,9 +7,10 @@
 //
 
 #import "HYDiscoverViewController.h"
+#import "HYMallCollectionViewCell.h"
 
-@interface HYDiscoverViewController ()
-
+@interface HYDiscoverViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
+@property (nonatomic,strong) UICollectionView *collectionView;
 @end
 
 @implementation HYDiscoverViewController
@@ -17,21 +18,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.collectionView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+
+    return 21;
 }
 
-/*
-#pragma mark - Navigation
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    HYMallCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HYMallCollectionViewCell" forIndexPath:indexPath];
+    NSString *imageName = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
+    cell.imageName = imageName;
+    return cell;
 }
-*/
+
+- (UICollectionView *)collectionView {
+    
+    if (!_collectionView) {
+        
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.itemSize = CGSizeMake(66, 70);
+        
+        
+        _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+        [_collectionView registerClass:[HYMallCollectionViewCell class] forCellWithReuseIdentifier:@"HYMallCollectionViewCell"];
+        _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        _collectionView.backgroundColor = [UIColor whiteColor];
+    }
+    return _collectionView;
+}
+
 
 @end
