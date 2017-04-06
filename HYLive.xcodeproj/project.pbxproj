@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4261F191E8CA1700068BFB9 /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4261F181E8CA1700068BFB9 /* UIView+Layer.m */; };
 		B4261F381E8CA2790068BFB9 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = B4261F1C1E8CA2790068BFB9 /* NSData+ImageContentType.m */; };
 		B4261F391E8CA2790068BFB9 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B4261F1E1E8CA2790068BFB9 /* SDImageCache.m */; };
 		B4261F3A1E8CA2790068BFB9 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = B4261F201E8CA2790068BFB9 /* SDWebImageCompat.m */; };
@@ -114,8 +113,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B4261F171E8CA1700068BFB9 /* UIView+Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layer.h"; sourceTree = "<group>"; };
-		B4261F181E8CA1700068BFB9 /* UIView+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layer.m"; sourceTree = "<group>"; };
 		B4261F1B1E8CA2790068BFB9 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		B4261F1C1E8CA2790068BFB9 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		B4261F1D1E8CA2790068BFB9 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
@@ -668,8 +665,6 @@
 		B4A10F641E839865008EAFAC /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				B4261F171E8CA1700068BFB9 /* UIView+Layer.h */,
-				B4261F181E8CA1700068BFB9 /* UIView+Layer.m */,
 				B4A10F651E83986E008EAFAC /* UIView+Frame.h */,
 				B4A10F661E83986E008EAFAC /* UIView+Frame.m */,
 			);
@@ -1004,7 +999,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4261F191E8CA1700068BFB9 /* UIView+Layer.m in Sources */,
 				B4A10FF21E839CD1008EAFAC /* MJRefreshConst.m in Sources */,
 				B4A10FF61E839CD1008EAFAC /* UIView+MJExtension.m in Sources */,
 				B4A110181E83DCA6008EAFAC /* ELWeiXinNewsModel.m in Sources */,
